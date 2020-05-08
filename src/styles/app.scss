@@ -1,0 +1,45 @@
+$dmElements: hsl(209, 23%, 22%);
+$dmBackground: hsl(207, 26%, 17%);
+$lmText: hsl(200, 15%, 8%);
+$lmInput: hsl(0, 0%, 52%);
+$lmBackground: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$width: 95vw;
+
+@mixin font {
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+@mixin input {
+    @include font;
+    &:active {
+        border-color: $dmBackground;
+    }
+}
+
+@import 'nav';
+@import 'modetoggle';
+@import 'search';
+@import 'country';
+@import 'pagination';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $dmBackground;
+    color: $white;
+    @include font;
+    overflow-x: hidden;
+}
+
+:focus {
+    outline: none;
+    border: 1px solid $lmInput;
+    border-radius: 15px;
+}
