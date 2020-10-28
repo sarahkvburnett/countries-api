@@ -1,45 +1,67 @@
-$dmElements: hsl(209, 23%, 22%);
-$dmBackground: hsl(207, 26%, 17%);
-$lmText: hsl(200, 15%, 8%);
-$lmInput: hsl(0, 0%, 52%);
-$lmBackground: hsl(0, 0%, 98%);
-$white: hsl(0, 0%, 100%);
+:root {
+	--color: hsl(0, 0%, 100%);
+	--input: hsl(207, 26%, 17%);
+	--elements: hsl(209, 23%, 22%);
+	--background: hsl(207, 26%, 17%);
+}
+
+.light {
+	--color: hsl(200, 15%, 8%);
+	--input: hsl(0, 0%, 52%);
+	--elements: hsl(0, 0%, 100%);
+	--background: hsl(0, 0%, 98%);
+}
+
+$lightGrey: hsl(0, 0%, 52%);
 
 $width: 95vw;
 
+$tablet: 500px;
+$desktop: 800px;
+
 @mixin font {
-    font-size: 14px;
-    font-family: 'Nunito Sans', sans-serif;
+	font-size: 14px;
+	font-family: "Nunito Sans", sans-serif;
+	color: var(--color);
 }
 
 @mixin input {
-    @include font;
-    &:active {
-        border-color: $dmBackground;
-    }
+	@include font;
+	&:active {
+		border-color: var(--background);
+	}
 }
 
-@import 'nav';
-@import 'modetoggle';
-@import 'search';
-@import 'country';
-@import 'pagination';
+@mixin media($bp) {
+	@media (min-width: $bp) {
+		@content;
+	}
+}
+
+@import "nav";
+@import "modetoggle";
+@import "search";
+@import "country";
+@import "pagination";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background: $dmBackground;
-    color: $white;
-    @include font;
-    overflow-x: hidden;
+	background: var(--background);
+	@include font;
+	overflow-x: hidden;
 }
 
 :focus {
-    outline: none;
-    border: 1px solid $lmInput;
-    border-radius: 15px;
+	outline: none;
+	border: 1px solid $lightGrey;
+	border-radius: 15px;
+}
+
+button {
+	cursor: pointer;
 }

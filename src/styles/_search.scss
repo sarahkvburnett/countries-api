@@ -1,41 +1,43 @@
 .searchBar {
-    min-height: 10vh;
-    width: $width;
-    background: $dmElements;
-    padding: 2vh 5vw;
-    margin: auto;
-    border-radius: 15px;
-    margin: 5vh auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &:focus, &:hover, &:active  {
-        border: 1px solid $lmInput;
-    }
-    label {
-        display: none;
-    }
-    input {
-        @include input;
-        background: $dmElements;
-        border-radius: 15px;
-        border: none;
-        color: $white;
-        padding: 2vh 2vw;
-        margin: 0vh 2vw;
-        min-width: 65vw;
-        &:focus {
-            outline: none;
-        }
-    }
+	min-height: 10vh;
+	width: $width;
+	background: var(--elements);
+	padding: 2vh 5vw;
+	margin: auto;
+	border-radius: 15px;
+	margin: 5vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	&:focus,
+	&:hover,
+	&:active {
+		border: 1px solid $lightGrey;
+	}
+	label {
+		display: none;
+	}
+	input {
+		@include input;
+		background: var(--elements);
+		border-radius: 15px;
+		border: none;
+		color: var(--color);
+		padding: 2vh 2vw;
+		margin: 0vh 2vw;
+		min-width: 65vw;
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 .searchInvalid {
-    border: 1px solid red !important;
-    p {
-        color: red;
-        margin: 1vh 0;
-        text-align: center;
-        white-space: pre;
-    }
+	border: 1px solid red !important;
+	p {
+		color: red;
+		margin: 1vh 0;
+		text-align: center;
+		white-space: pre;
+	}
 }

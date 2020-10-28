@@ -3,7 +3,7 @@ import React from 'react'
 const Country = ( {country, addActiveCountry} ) => {
     const { name, flag, population, region, capital } = country;
     return (
-        <div className="countryList" onClick={()=>{addActiveCountry(country)}} tabIndex="0">
+        <div className="countryItem" onClick={()=>{addActiveCountry(country)}} tabIndex="0">
             <img src={flag} alt="flag"></img>
             <div className="countryInfo">
                 <h1>{name}</h1>

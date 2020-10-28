@@ -1,21 +1,21 @@
-import React from 'react'
-import Country from './Country'
-import Pagination from './Pagination'
+import React from "react";
+import Country from "./Country";
 
-const CountryList = ({ countries, pagination }) => {
-    const { addActiveCountry, currentCountries } = countries
-    return (
-        <div>
-            {
-            currentCountries
-                .map((country) => {
-                    return <Country key={country.name} country={country} addActiveCountry={addActiveCountry}/>
-                })
-            }
-            <Pagination pagination={pagination}/>
-        </div>
-    )
-}
+const CountryList = ({ countries }) => {
+	const { addActiveCountry, currentCountries } = countries;
+	return (
+		<div className="countryList">
+			{currentCountries.map((country) => {
+				return (
+					<Country
+						key={country.name}
+						country={country}
+						addActiveCountry={addActiveCountry}
+					/>
+				);
+			})}
+		</div>
+	);
+};
 
-export default CountryList
-
+export default CountryList;
